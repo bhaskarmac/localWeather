@@ -67,12 +67,25 @@ jQuery(document).ready(function($) {
 	 			$("#cityCountry").text(result.name + ", " +result.sys.country);
 	 			currentTempInCelsius = Math.round(result.main.temp * 10) / 10;
 	 			$("#tempDetails").text(currentTempInCelsius + " " + String.fromCharCode(176) + " " + tempUnit);
+	 			$("#tempunit").text(tempUnit);
 	 			$("#desc").text(result.weather[0].main);
 	 			$(".icon").addClass('hide');
 	 			$('div.' + result.weather[0].main.toLowerCase()).removeClass('hide');
 	 		}
 	 	});
 	 }
+
+	 $("#tempDetails").click(function () {
+	 	var currentTempUnit = $("#tempunit").text();
+	 	var newTempUnit = currentTempUnit == "C" ? "F" : "C";
+	 	$("#tempunit").text(newTempUnit);
+	 	if (newTempUnit == "F") {
+	 		var fahTemp = Math.round(parseInt(currentTempInCelsius) * 9 / 5 + 32);
+	 		$("#tempDetails").text(fahTemp + " " + String.fromCharCode(176) + " " + newTempUnit);
+	 	} else {
+	 		$("#tempDetails").text(currentTempInCelsius + " " + String.fromCharCode(176) + " " + tempUnit);
+	 	}
+	 });
 
 	 getLocation();
 

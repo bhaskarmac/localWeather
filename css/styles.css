@@ -390,3 +390,8 @@ div.hide {
     opacity: 0.2;
   }
 }
+
+#tempDetails{
+  color: #006dcc;
+  cursor: pointer;
+}
