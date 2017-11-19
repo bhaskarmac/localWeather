@@ -68,8 +68,8 @@ jQuery(document).ready(function($) {
 	 			currentTempInCelsius = Math.round(result.main.temp * 10) / 10;
 	 			$("#tempDetails").text(currentTempInCelsius + " " + String.fromCharCode(176) + " " + tempUnit);
 	 			$("#desc").text(result.weather[0].main);
-	 			console.log('result.weather[0].icon=>', result.weather[0].icon);
-	 			$("#weatherIcon").attr('src', result.weather[0].icon);
+	 			$(".icon").addClass('hide');
+	 			$('div.' + result.weather[0].main.toLowerCase()).removeClass('hide');
 	 		}
 	 	});
 	 }
