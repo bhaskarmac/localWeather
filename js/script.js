@@ -25,8 +25,7 @@ jQuery(document).ready(function($) {
 	 */
 	 function showPosition(position) {
 	 	console.log('in showPosition!');
-	 	userLocationDiv.innerHTML = "Latitude: " + position.coords.latitude + 
-	 	"<br>Longitude: " + position.coords.longitude;
+	 	// userLocationDiv.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
 	 	var lat = "lat=" + position.coords.latitude;
 	 	var long = "lon=" + position.coords.longitude;
 	 	getWeatherData(lat, long);
@@ -71,6 +70,8 @@ jQuery(document).ready(function($) {
 	 			$("#temp").text(currentTempInCelsius + " " + String.fromCharCode(176));
 	 			$("#tempunit").text(tempUnit);
 	 			$("#desc").text(result.weather[0].main);
+	 			console.log('result.weather[0].icon=>', result.weather[0].icon);
+	 			$("#weatherIcon").attr('src', result.weather[0].icon);
 	 		}
 	 	});
 	 }
