@@ -391,7 +391,7 @@ div.hide {
   }
 }
 
-#tempDetails{
+#tempDetails, .colorLink{
   color: #006dcc;
   cursor: pointer;
 }
