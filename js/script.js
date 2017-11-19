@@ -64,11 +64,9 @@ jQuery(document).ready(function($) {
 	 	$.ajax({
 	 		url: urlStr, success: function (result) {
 	 			console.log('result=>', result);
-	 			$("#city").text(result.name + ", ");
-	 			$("#country").text(result.sys.country);
+	 			$("#cityCountry").text(result.name + ", " +result.sys.country);
 	 			currentTempInCelsius = Math.round(result.main.temp * 10) / 10;
-	 			$("#temp").text(currentTempInCelsius + " " + String.fromCharCode(176));
-	 			$("#tempunit").text(tempUnit);
+	 			$("#tempDetails").text(currentTempInCelsius + " " + String.fromCharCode(176) + " " + tempUnit);
 	 			$("#desc").text(result.weather[0].main);
 	 			console.log('result.weather[0].icon=>', result.weather[0].icon);
 	 			$("#weatherIcon").attr('src', result.weather[0].icon);
