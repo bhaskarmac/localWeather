@@ -395,3 +395,27 @@ div.hide {
   color: #006dcc;
   cursor: pointer;
 }
+
+#loading {
+ width: 100%;
+ height: 100%;
+ top: 0;
+ left: 0;
+ position: fixed;
+ display: block;
+ opacity: 0.7;
+ background-color: #E6E6E6;
+ z-index: 99;
+ text-align: center;
+}
+
+#loading-image {
+  position: absolute;
+  z-index: 100;
+  height: 64px;
+  width: 64px;
+  top:50%;
+  left:50%;
+  margin-left: -32px;
+  margin-top: -32px;
+}
