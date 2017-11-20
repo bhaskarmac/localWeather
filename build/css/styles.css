@@ -1,3 +1,12 @@
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
 body {
   font-family: 'Roboto';
   color: #fff;
@@ -394,4 +403,28 @@ div.hide {
 #tempDetails, .colorLink{
   color: #006dcc;
   cursor: pointer;
+}
+
+#loading {
+ width: 100%;
+ height: 100%;
+ top: 0;
+ left: 0;
+ position: fixed;
+ display: block;
+ opacity: 0.7;
+ background-color: #E6E6E6;
+ z-index: 99;
+ text-align: center;
+}
+
+#loading-image {
+  position: absolute;
+  z-index: 100;
+  height: 64px;
+  width: 64px;
+  top:50%;
+  left:50%;
+  margin-left: -32px;
+  margin-top: -32px;
 }

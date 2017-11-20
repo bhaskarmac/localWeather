@@ -37,6 +37,7 @@ jQuery(document).ready(function($) {
 	 */
 	 function showError(error) {
 	 	console.log('in showError!');
+	 	$('#loading').fadeOut(200);
 	 	switch(error.code) {
 	 		case error.PERMISSION_DENIED:
 	 		userLocationDiv.innerHTML = "User denied the request for Geolocation."
@@ -68,9 +69,10 @@ jQuery(document).ready(function($) {
 	 			currentTempInCelsius = Math.round(result.main.temp * 10) / 10;
 	 			$("#tempDetails").text(currentTempInCelsius + " " + String.fromCharCode(176) + " " + tempUnit);
 	 			$("#tempunit").text(tempUnit);
-	 			$("#desc").text(result.weather[0].main);
+	 			// $("#desc").text(result.weather[0].main);
 	 			$(".icon").addClass('hide');
 	 			$('div.' + result.weather[0].main.toLowerCase()).removeClass('hide');
+	 			$("#loading").fadeOut(200);
 	 		}
 	 	});
 	 }
